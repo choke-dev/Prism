@@ -6,7 +6,7 @@
  */
 
 // Declare constants which will be used throughout the bot.
-
+const environment = process.env.NODE_ENV;
 const fs = require("fs");
 const {
 	Client,
@@ -16,7 +16,7 @@ const {
 	REST,
 	Routes
 } = require("discord.js");
-const { token, client_id, test_guild_id } = require("./config.json");
+const { client_id, test_guild_id } = require("./config.json");
 
 /**
  * From v13, specifying the intents is compulsory.
@@ -235,7 +235,7 @@ for (const module of selectMenus) {
 /**********************************************************************/
 // Registration of Slash-Commands in Discord API
 
-const rest = new REST({ version: "9" }).setToken(token);
+const rest = new REST({ version: "9" }).setToken(process.env["BOT_TOKEN"]);
 
 const commandJsonData = [
 	...Array.from(client.slashCommands.values()).map((c) => c.data.toJSON()),
@@ -262,7 +262,7 @@ const commandJsonData = [
 			 * to ensure they don't get re-deployed on the next restart.
 			 */
 
-			// Routes.applicationCommands(client_id)
+			// Routes.applicationCommands(client_id),
 
 			{ body: commandJsonData }
 		);
@@ -295,6 +295,6 @@ for (const folder of triggerFolders) {
 	}
 }
 
-// Login into your client application with bot's token.
+// Login into your client application with bot's process.env["BOT_TOKEN"].
 
-client.login(token);
+client.login(process.env["BOT_TOKEN"]);

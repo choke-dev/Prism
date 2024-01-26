@@ -6,7 +6,8 @@
 	"types": "./typings.d.ts",
 	"main": "bot.js",
 	"scripts": {
-		"start": "node bot.js"
+		"start": "NODE_ENV=production node --env-file .env bot.js",
+		"dev": "NODE_ENV=development node --env-file .env bot.js"
 	},
 	"repository": {
 		"type": "git",
