@@ -14,6 +14,7 @@ npm install
 ## Run your bot
 
 ```sh
+# Running through CLI
 npm start
 
 # Running through PM2
