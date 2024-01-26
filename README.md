@@ -1,5 +1,5 @@
 <h1 align="center">Prism</h1>
-> Prism is a discord bot to replicate discord's group chat features in a server.
+> Prism is a custom-built discord bot for one of my friends.
 
 ## Install
 
@@ -18,5 +18,5 @@ npm install
 npm start
 
 # Running through PM2
-pm2 start start.sh --name GCBot
+pm2 start start.sh --name PrismBot
 ```
