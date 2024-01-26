@@ -5,7 +5,7 @@ module.exports = {
 
 	async execute(message) {
 		if (message.type === 6) {
-			message.delete();
+			return message.delete();
 		}
 	},
 };
