@@ -1,5 +1,5 @@
-<h1 align="center">GCBot</h1>
-> GCBot is a discord bot to replicate discord's group chat features in a server.
+<h1 align="center">Prism</h1>
+> Prism is a discord bot to replicate discord's group chat features in a server.
 
 ## Install
 
