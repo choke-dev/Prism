@@ -7,6 +7,8 @@
 
 const { Events } = require("discord.js");
 
+const errmsg = ":x: An error occured while attempting to execute that command."
+
 module.exports = {
 	name: Events.InteractionCreate,
 
@@ -36,10 +38,17 @@ module.exports = {
 			await command.execute(interaction);
 		} catch (err) {
 			console.error(err);
-			await interaction.reply({
-				content: "There was an issue while executing that command!",
-				ephemeral: true,
-			});
+			if (interaction.replied) {
+				await interaction.editReply({
+					content: errmsg,
+					ephemeral: true,
+				});
+			} else {
+				await interaction.reply({
+					content: errmsg,
+					ephemeral: true,
+				});
+			}
 		}
 	},
 };
